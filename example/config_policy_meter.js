@@ -1,4 +1,4 @@
-// 1c12, minNN=10^10, prohibit known leaked passwords
+// 1c14, minNN=10^10, prohibit known leaked passwords
 var passwordMeterConfig = {
     provideConcretePasswordSuggestions: false,
     randomizeOrderCharClassRequirement: true,
@@ -41,7 +41,7 @@ var passwordMeterConfig = {
         list: [],
     },
     repeatChars: { // prohibit a character being repeated N or more times consecutively
-        active: true,
+        active: false,
         limit: 3, 
     },
     usernameDifference: { // prohibit passwords being N or fewer characters different than username
@@ -63,7 +63,7 @@ var passwordMeterConfig = {
         smallestLength: 5,
     },
     blacklist: {
-        active: true,
+        active: false,
         blacklistFile: "blacklist-chi17lowercase-compressed.txt", // all letters are lowercase
         caseSensitive: false,
         stripDigitsSymbolsFromPassword: false,
