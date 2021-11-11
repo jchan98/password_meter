@@ -14,7 +14,7 @@ var passwordMeterConfig = {
     domainSpecificWords: ["pittsburgh", "steelers", "stillers", "penguins", "pens", "pirates", "bucs", "carnegie", "mellon", "university"],
     length: {
         active: true,
-        minLength: 12,
+        minLength: 14,
         maxLength: 0, // set to 0 if there is no maximum length
     },
     classCount: { // number of character classes
@@ -25,8 +25,8 @@ var passwordMeterConfig = {
     classRequire: { // required character classes
         active: false,
         upperCase: false,
-        lowerCase: true,
-        digits: true,
+        lowerCase: false,
+        digits: false,
         symbols: false,
     },
     classAllow: { // permitted character classes
@@ -41,7 +41,7 @@ var passwordMeterConfig = {
         list: [],
     },
     repeatChars: { // prohibit a character being repeated N or more times consecutively
-        active: false,
+        active: true,
         limit: 3, 
     },
     usernameDifference: { // prohibit passwords being N or fewer characters different than username
@@ -63,7 +63,7 @@ var passwordMeterConfig = {
         smallestLength: 5,
     },
     blacklist: {
-        active: false,
+        active: true,
         blacklistFile: "blacklist-chi17lowercase-compressed.txt", // all letters are lowercase
         caseSensitive: false,
         stripDigitsSymbolsFromPassword: false,
