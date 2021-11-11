@@ -63,7 +63,7 @@ var passwordMeterConfig = {
         smallestLength: 5,
     },
     blacklist: {
-        active: false,
+        active: true,
         blacklistFile: "blacklist-chi17lowercase-compressed.txt", // all letters are lowercase
         caseSensitive: false,
         stripDigitsSymbolsFromPassword: false,
