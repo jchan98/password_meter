@@ -1,4 +1,4 @@
-// 1c14, minNN=10^10
+// 1c12, minNN=10^10, prohibit known leaked passwords
 var passwordMeterConfig = {
     provideConcretePasswordSuggestions: false,
     randomizeOrderCharClassRequirement: true,
@@ -25,8 +25,8 @@ var passwordMeterConfig = {
     classRequire: { // required character classes
         active: false,
         upperCase: false,
-        lowerCase: false,
-        digits: false,
+        lowerCase: true,
+        digits: true,
         symbols: false,
     },
     classAllow: { // permitted character classes
@@ -59,11 +59,11 @@ var passwordMeterConfig = {
         lengthException: 20,
     },
     prohibitKnownLeaked: { // prohibit passwords found in database leaks, as reported by Pwned Pwds
-        active: false,
+        active: true,
         smallestLength: 5,
     },
     blacklist: {
-        active: true,
+        active: false,
         blacklistFile: "blacklist-chi17lowercase-compressed.txt", // all letters are lowercase
         caseSensitive: false,
         stripDigitsSymbolsFromPassword: false,
@@ -78,7 +78,7 @@ var passwordMeterConfig = {
         cacheSize: 1000,
         passwordEndChar: "\n",
 	postProcessUppercasePredictability: false,
-	policyMinLength: 14,
+	policyMinLength: 12,
 	policyMinCharClasses: 1
     },
     staticUrlPrefix: "", // use if need need to prepend a path to the worker.min.js path
